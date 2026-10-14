@@ -1,0 +1,661 @@
+{
+  "name": "FHGR Bewertungsraster Vorstellungsgespräch",
+  "source": "Feedbackkriterien zum Vorstellungsgespräch.docx (FHGR / Profolio)",
+  "scale": [
+    {
+      "value": 1,
+      "key": "ungenuegend",
+      "de": "Ungenügend",
+      "en": "Insufficient",
+      "fr": "Insuffisant",
+      "it": "Insufficiente"
+    },
+    {
+      "value": 2,
+      "key": "ausbaufaehig",
+      "de": "Ausbaufähig",
+      "en": "Developing",
+      "fr": "À développer",
+      "it": "Da sviluppare"
+    },
+    {
+      "value": 3,
+      "key": "gut",
+      "de": "Gut",
+      "en": "Good",
+      "fr": "Bien",
+      "it": "Buono"
+    },
+    {
+      "value": 4,
+      "key": "sehr_gut",
+      "de": "Sehr gut",
+      "en": "Very good",
+      "fr": "Très bien",
+      "it": "Molto buono"
+    }
+  ],
+  "not_observed": {
+    "value": null,
+    "de": "Dazu gab es im Gespräch keine Aussage",
+    "en": "No evidence in the conversation"
+  },
+  "criteria": [
+    {
+      "key": "clarity",
+      "core_challenge_criterion": true,
+      "label": {
+        "de": "Klarheit",
+        "en": "Clarity",
+        "fr": "Clarté",
+        "it": "Chiarezza"
+      },
+      "what_is_assessed": {
+        "de": "Verständlichkeit, Struktur und Nachvollziehbarkeit der Antworten",
+        "en": "Comprehensibility, structure and traceability of the answers"
+      },
+      "levels": [
+        {
+          "value": 1,
+          "key": "ungenuegend",
+          "label_de": "Ungenügend",
+          "description": {
+            "de": "Antworten sind wirr, unvollständig oder schwer verständlich",
+            "en": "Answers are confused, incomplete or hard to follow"
+          },
+          "example_de": "„Also ich weiss nicht, halt irgendwie so, ja…“"
+        },
+        {
+          "value": 2,
+          "key": "ausbaufaehig",
+          "label_de": "Ausbaufähig",
+          "description": {
+            "de": "Grundgedanke erkennbar, aber unstrukturiert oder abschweifend",
+            "en": "Main idea recognisable but unstructured or rambling"
+          },
+          "example_de": "Antwort enthält den richtigen Kern, springt aber zwischen Themen hin und her"
+        },
+        {
+          "value": 3,
+          "key": "gut",
+          "label_de": "Gut",
+          "description": {
+            "de": "Klar formuliert, roter Faden erkennbar",
+            "en": "Clearly phrased, a common thread is visible"
+          },
+          "example_de": "Antwort mit klarem Anfang, Kern und Schluss"
+        },
+        {
+          "value": 4,
+          "key": "sehr_gut",
+          "label_de": "Sehr gut",
+          "description": {
+            "de": "Präzise, strukturiert, auf den Punkt gebracht",
+            "en": "Precise, structured, to the point"
+          },
+          "example_de": "Antwort folgt erkennbar einem Aufbau (z. B. Situation – Handlung – Ergebnis)"
+        }
+      ]
+    },
+    {
+      "key": "relevance",
+      "core_challenge_criterion": true,
+      "label": {
+        "de": "Relevanz",
+        "en": "Relevance",
+        "fr": "Pertinence",
+        "it": "Pertinenza"
+      },
+      "what_is_assessed": {
+        "de": "Passt die Antwort zur gestellten Frage und zur angestrebten Lehrstelle?",
+        "en": "Does the answer fit the question asked and the apprenticeship applied for?"
+      },
+      "levels": [
+        {
+          "value": 1,
+          "key": "ungenuegend",
+          "label_de": "Ungenügend",
+          "description": {
+            "de": "Antwort geht am Thema vorbei",
+            "en": "Answer misses the topic"
+          },
+          "example_de": "Auf Frage nach Stärken wird über Hobbys erzählt, ohne Bezug"
+        },
+        {
+          "value": 2,
+          "key": "ausbaufaehig",
+          "label_de": "Ausbaufähig",
+          "description": {
+            "de": "Teilweise passend, enthält aber unnötige Nebeninfos",
+            "en": "Partly fitting but contains unnecessary side information"
+          },
+          "example_de": "Antwort beginnt passend, verliert dann den Bezug zur Frage"
+        },
+        {
+          "value": 3,
+          "key": "gut",
+          "label_de": "Gut",
+          "description": {
+            "de": "Antwort bezieht sich klar auf die Frage",
+            "en": "Answer clearly addresses the question"
+          },
+          "example_de": "Direkte, themenbezogene Antwort"
+        },
+        {
+          "value": 4,
+          "key": "sehr_gut",
+          "label_de": "Sehr gut",
+          "description": {
+            "de": "Antwort ist zielgerichtet und stellt zusätzlich den Bezug zur Lehrstelle her",
+            "en": "Answer is targeted and additionally links to the apprenticeship"
+          },
+          "example_de": "„Diese Genauigkeit hilft mir gerade im Beruf X, weil…“"
+        }
+      ]
+    },
+    {
+      "key": "motivation",
+      "core_challenge_criterion": true,
+      "label": {
+        "de": "Motivation",
+        "en": "Motivation",
+        "fr": "Motivation",
+        "it": "Motivazione"
+      },
+      "what_is_assessed": {
+        "de": "Erkennbares echtes Interesse am Beruf und am Betrieb",
+        "en": "Recognisable genuine interest in the occupation and the company"
+      },
+      "levels": [
+        {
+          "value": 1,
+          "key": "ungenuegend",
+          "label_de": "Ungenügend",
+          "description": {
+            "de": "Kein erkennbares Interesse, floskelhafte Aussagen",
+            "en": "No recognisable interest, empty phrases"
+          },
+          "example_de": "„Weil man da halt Geld verdient.“"
+        },
+        {
+          "value": 2,
+          "key": "ausbaufaehig",
+          "label_de": "Ausbaufähig",
+          "description": {
+            "de": "Interesse vorhanden, aber wenig begründet",
+            "en": "Interest present but poorly justified"
+          },
+          "example_de": "„Der Beruf gefällt mir einfach.“"
+        },
+        {
+          "value": 3,
+          "key": "gut",
+          "label_de": "Gut",
+          "description": {
+            "de": "Motivation wird nachvollziehbar begründet",
+            "en": "Motivation is plausibly justified"
+          },
+          "example_de": "„Mich fasziniert, wie man aus Rohstoffen etwas Fertiges herstellt.“"
+        },
+        {
+          "value": 4,
+          "key": "sehr_gut",
+          "label_de": "Sehr gut",
+          "description": {
+            "de": "Motivation ist persönlich, begründet und mit Zukunftsbezug verknüpft",
+            "en": "Motivation is personal, justified and linked to the future"
+          },
+          "example_de": "Bezug auf konkretes Erlebnis (z. B. Schnuppertag) plus langfristiges Ziel"
+        }
+      ]
+    },
+    {
+      "key": "self_reflection",
+      "core_challenge_criterion": true,
+      "label": {
+        "de": "Selbstreflexion",
+        "en": "Self-awareness",
+        "fr": "Réflexion sur soi",
+        "it": "Autoriflessione"
+      },
+      "what_is_assessed": {
+        "de": "Fähigkeit, eigene Stärken, Schwächen und Erfahrungen realistisch einzuschätzen",
+        "en": "Ability to assess one's own strengths, weaknesses and experiences realistically"
+      },
+      "levels": [
+        {
+          "value": 1,
+          "key": "ungenuegend",
+          "label_de": "Ungenügend",
+          "description": {
+            "de": "Keine Selbsteinschätzung möglich oder unrealistisch",
+            "en": "No or unrealistic self-assessment"
+          },
+          "example_de": "„Ich habe keine Schwächen.“"
+        },
+        {
+          "value": 2,
+          "key": "ausbaufaehig",
+          "label_de": "Ausbaufähig",
+          "description": {
+            "de": "Schwäche wird genannt, aber ohne Einsicht oder Lernschritt",
+            "en": "Weakness named but without insight or learning step"
+          },
+          "example_de": "„Ich bin manchmal unpünktlich, aber das ist nicht so schlimm.“"
+        },
+        {
+          "value": 3,
+          "key": "gut",
+          "label_de": "Gut",
+          "description": {
+            "de": "Realistische Selbsteinschätzung mit Lernansatz",
+            "en": "Realistic self-assessment with a learning approach"
+          },
+          "example_de": "„Ich war früher schnell nervös, arbeite aber daran, ruhiger zu bleiben.“"
+        },
+        {
+          "value": 4,
+          "key": "sehr_gut",
+          "label_de": "Sehr gut",
+          "description": {
+            "de": "Reflektierte Einschätzung inkl. konkreter Massnahme und Wirkung",
+            "en": "Reflective assessment incl. concrete measure and effect"
+          },
+          "example_de": "Nennt Schwäche, konkreten Schritt zur Verbesserung und ersten Erfolg"
+        }
+      ]
+    },
+    {
+      "key": "communication",
+      "core_challenge_criterion": true,
+      "label": {
+        "de": "Kommunikationsfähigkeit",
+        "en": "Communication",
+        "fr": "Communication",
+        "it": "Comunicazione"
+      },
+      "what_is_assessed": {
+        "de": "Ausdrucksweise, Wortwahl, Tonfall, aktives Zuhören",
+        "en": "Expression, choice of words, tone, active listening"
+      },
+      "levels": [
+        {
+          "value": 1,
+          "key": "ungenuegend",
+          "label_de": "Ungenügend",
+          "description": {
+            "de": "Unhöflicher, zu lockerer oder unpassender Ton",
+            "en": "Impolite, too casual or inappropriate tone"
+          },
+          "example_de": "Umgangssprache, Unterbrechungen, einsilbige Antworten"
+        },
+        {
+          "value": 2,
+          "key": "ausbaufaehig",
+          "label_de": "Ausbaufähig",
+          "description": {
+            "de": "Verständlich, aber unsicher oder zu knapp",
+            "en": "Understandable but hesitant or too brief"
+          },
+          "example_de": "Kurze Ja/Nein-Antworten ohne Ausführung"
+        },
+        {
+          "value": 3,
+          "key": "gut",
+          "label_de": "Gut",
+          "description": {
+            "de": "Angemessener, freundlicher und klarer Ausdruck",
+            "en": "Appropriate, friendly and clear expression"
+          },
+          "example_de": "Vollständige Sätze, höflicher Ton"
+        },
+        {
+          "value": 4,
+          "key": "sehr_gut",
+          "label_de": "Sehr gut",
+          "description": {
+            "de": "Sicher, angemessen und situativ passend, geht auf Gesprächspartner ein",
+            "en": "Confident, appropriate, responsive to the interviewer"
+          },
+          "example_de": "Reagiert auf Rückfragen, hört aktiv zu, formuliert präzise"
+        }
+      ]
+    },
+    {
+      "key": "concrete_examples",
+      "core_challenge_criterion": true,
+      "label": {
+        "de": "Konkrete Beispiele",
+        "en": "Concrete examples",
+        "fr": "Exemples concrets",
+        "it": "Esempi concreti"
+      },
+      "what_is_assessed": {
+        "de": "Aussagen werden mit echten Erlebnissen/Situationen belegt statt nur behauptet",
+        "en": "Statements are backed by real experiences/situations rather than merely claimed"
+      },
+      "levels": [
+        {
+          "value": 1,
+          "key": "ungenuegend",
+          "label_de": "Ungenügend",
+          "description": {
+            "de": "Nur allgemeine Behauptungen ohne Beleg",
+            "en": "Only general claims without evidence"
+          },
+          "example_de": "„Ich bin teamfähig.“ (ohne Beispiel)"
+        },
+        {
+          "value": 2,
+          "key": "ausbaufaehig",
+          "label_de": "Ausbaufähig",
+          "description": {
+            "de": "Beispiel wird genannt, aber vage",
+            "en": "Example given but vague"
+          },
+          "example_de": "„Ich habe mal im Sportverein mitgeholfen.“"
+        },
+        {
+          "value": 3,
+          "key": "gut",
+          "label_de": "Gut",
+          "description": {
+            "de": "Konkretes, nachvollziehbares Beispiel",
+            "en": "Concrete, comprehensible example"
+          },
+          "example_de": "Schilderung einer Situation mit Kontext und eigenem Beitrag"
+        },
+        {
+          "value": 4,
+          "key": "sehr_gut",
+          "label_de": "Sehr gut",
+          "description": {
+            "de": "Beispiel inkl. Situation, Handlung und Ergebnis",
+            "en": "Example incl. situation, action and result"
+          },
+          "example_de": "„Als wir im Projekt X in Verzug waren, habe ich Y organisiert, wodurch wir Z erreicht haben.“"
+        }
+      ]
+    },
+    {
+      "key": "demeanor",
+      "core_challenge_criterion": false,
+      "label": {
+        "de": "Auftreten & Wirkung",
+        "en": "Demeanour & impression",
+        "fr": "Attitude & impression",
+        "it": "Atteggiamento & impressione"
+      },
+      "what_is_assessed": {
+        "de": "Höflichkeit, Selbstsicherheit, Umgangston, Körpersprache (sofern erfassbar)",
+        "en": "Politeness, self-confidence, tone, body language (if observable)"
+      },
+      "levels": [
+        {
+          "value": 1,
+          "key": "ungenuegend",
+          "label_de": "Ungenügend",
+          "description": {
+            "de": "Unsicher, unhöflich oder distanziert wirkend",
+            "en": "Appears insecure, impolite or distant"
+          },
+          "example_de": "Kein Blickkontakt, sehr leise, abweisender Ton"
+        },
+        {
+          "value": 2,
+          "key": "ausbaufaehig",
+          "label_de": "Ausbaufähig",
+          "description": {
+            "de": "Grundsätzlich höflich, aber nervös oder zurückhaltend",
+            "en": "Basically polite but nervous or reserved"
+          },
+          "example_de": "Antworten wirken auswendig gelernt oder gehemmt"
+        },
+        {
+          "value": 3,
+          "key": "gut",
+          "label_de": "Gut",
+          "description": {
+            "de": "Freundlich, aufmerksam, angemessen selbstsicher",
+            "en": "Friendly, attentive, appropriately confident"
+          },
+          "example_de": "Ruhiger Ton, offene Haltung"
+        },
+        {
+          "value": 4,
+          "key": "sehr_gut",
+          "label_de": "Sehr gut",
+          "description": {
+            "de": "Souverän, zugewandt, positive Ausstrahlung",
+            "en": "Poised, engaged, positive presence"
+          },
+          "example_de": "Wirkt natürlich, reagiert flexibel auf Gesprächsverlauf"
+        }
+      ]
+    },
+    {
+      "key": "preparation",
+      "core_challenge_criterion": false,
+      "label": {
+        "de": "Vorbereitung / Betriebskenntnis",
+        "en": "Preparation / company knowledge",
+        "fr": "Préparation / connaissance de l'entreprise",
+        "it": "Preparazione / conoscenza dell'azienda"
+      },
+      "what_is_assessed": {
+        "de": "Wissen über den Lehrbetrieb, den Beruf und die Anforderungen",
+        "en": "Knowledge of the training company, the occupation and its requirements"
+      },
+      "levels": [
+        {
+          "value": 1,
+          "key": "ungenuegend",
+          "label_de": "Ungenügend",
+          "description": {
+            "de": "Keine Informationen über Betrieb/Beruf vorhanden",
+            "en": "No information about company/occupation"
+          },
+          "example_de": "„Was macht die Firma eigentlich genau?“"
+        },
+        {
+          "value": 2,
+          "key": "ausbaufaehig",
+          "label_de": "Ausbaufähig",
+          "description": {
+            "de": "Grundwissen vorhanden, aber oberflächlich",
+            "en": "Basic but superficial knowledge"
+          },
+          "example_de": "Nennt nur den Firmennamen"
+        },
+        {
+          "value": 3,
+          "key": "gut",
+          "label_de": "Gut",
+          "description": {
+            "de": "Betrieb und Berufsbild sind bekannt",
+            "en": "Company and occupation are known"
+          },
+          "example_de": "Nennt Produkte/Dienstleistungen des Betriebs korrekt"
+        },
+        {
+          "value": 4,
+          "key": "sehr_gut",
+          "label_de": "Sehr gut",
+          "description": {
+            "de": "Fundiertes Wissen, das aktiv ins Gespräch eingebracht wird",
+            "en": "Sound knowledge actively brought into the conversation"
+          },
+          "example_de": "Bezieht sich auf aktuelle Projekte oder Werte des Betriebs"
+        }
+      ]
+    },
+    {
+      "key": "goal_orientation",
+      "core_challenge_criterion": false,
+      "label": {
+        "de": "Zielorientierung",
+        "en": "Goal orientation",
+        "fr": "Orientation vers les objectifs",
+        "it": "Orientamento agli obiettivi"
+      },
+      "what_is_assessed": {
+        "de": "Klarheit über Berufswahl und langfristige Vorstellungen",
+        "en": "Clarity about career choice and long-term ideas"
+      },
+      "levels": [
+        {
+          "value": 1,
+          "key": "ungenuegend",
+          "label_de": "Ungenügend",
+          "description": {
+            "de": "Keine Vorstellung von Zukunft oder Berufswahl",
+            "en": "No idea about the future or career choice"
+          },
+          "example_de": "„Ich weiss noch nicht, was ich danach machen will.“"
+        },
+        {
+          "value": 2,
+          "key": "ausbaufaehig",
+          "label_de": "Ausbaufähig",
+          "description": {
+            "de": "Vage Vorstellung ohne klaren Bezug zur Lehrstelle",
+            "en": "Vague idea without clear link to the apprenticeship"
+          },
+          "example_de": "„Ich möchte einfach eine gute Ausbildung machen.“"
+        },
+        {
+          "value": 3,
+          "key": "gut",
+          "label_de": "Gut",
+          "description": {
+            "de": "Klares Ziel, das zur Lehrstelle passt",
+            "en": "Clear goal matching the apprenticeship"
+          },
+          "example_de": "„Ich möchte diesen Beruf lernen, weil er zu meinen Stärken passt.“"
+        },
+        {
+          "value": 4,
+          "key": "sehr_gut",
+          "label_de": "Sehr gut",
+          "description": {
+            "de": "Klares Ziel mit langfristiger Perspektive",
+            "en": "Clear goal with long-term perspective"
+          },
+          "example_de": "Nennt auch mögliche Weiterbildungs- oder Entwicklungsschritte nach der Lehre"
+        }
+      ]
+    },
+    {
+      "key": "difficult_questions",
+      "core_challenge_criterion": false,
+      "label": {
+        "de": "Umgang mit schwierigen Fragen",
+        "en": "Handling difficult questions",
+        "fr": "Gestion des questions difficiles",
+        "it": "Gestione delle domande difficili"
+      },
+      "what_is_assessed": {
+        "de": "Reaktion auf kritische, unerwartete oder unangenehme Fragen",
+        "en": "Reaction to critical, unexpected or uncomfortable questions"
+      },
+      "levels": [
+        {
+          "value": 1,
+          "key": "ungenuegend",
+          "label_de": "Ungenügend",
+          "description": {
+            "de": "Blockiert, ausweichend oder abwehrend",
+            "en": "Blocks, evades or becomes defensive"
+          },
+          "example_de": "Wechselt bei kritischer Frage abrupt das Thema"
+        },
+        {
+          "value": 2,
+          "key": "ausbaufaehig",
+          "label_de": "Ausbaufähig",
+          "description": {
+            "de": "Reagiert, wirkt aber überfordert",
+            "en": "Responds but appears overwhelmed"
+          },
+          "example_de": "Lange Pausen, unsichere Antwort ohne klaren Inhalt"
+        },
+        {
+          "value": 3,
+          "key": "gut",
+          "label_de": "Gut",
+          "description": {
+            "de": "Bleibt ruhig und antwortet sachlich",
+            "en": "Stays calm and answers factually"
+          },
+          "example_de": "Nimmt die Frage an und antwortet ehrlich"
+        },
+        {
+          "value": 4,
+          "key": "sehr_gut",
+          "label_de": "Sehr gut",
+          "description": {
+            "de": "Souveräner, konstruktiver Umgang, ggf. mit positivem Lerneffekt",
+            "en": "Poised, constructive handling, possibly with a learning effect"
+          },
+          "example_de": "Räumt Fehler/Schwäche ein und zeigt, was daraus gelernt wurde"
+        }
+      ]
+    },
+    {
+      "key": "initiative",
+      "core_challenge_criterion": false,
+      "label": {
+        "de": "Eigeninitiative",
+        "en": "Initiative",
+        "fr": "Initiative",
+        "it": "Iniziativa"
+      },
+      "what_is_assessed": {
+        "de": "Werden am Ende eigene, sinnvolle Fragen an den Betrieb gestellt?",
+        "en": "Does the candidate ask their own meaningful questions to the company at the end?"
+      },
+      "levels": [
+        {
+          "value": 1,
+          "key": "ungenuegend",
+          "label_de": "Ungenügend",
+          "description": {
+            "de": "Keine Fragen am Ende des Gesprächs",
+            "en": "No questions at the end"
+          },
+          "example_de": "„Nein, ich habe keine Fragen.“"
+        },
+        {
+          "value": 2,
+          "key": "ausbaufaehig",
+          "label_de": "Ausbaufähig",
+          "description": {
+            "de": "Frage wird gestellt, ist aber generisch",
+            "en": "A question is asked but it is generic"
+          },
+          "example_de": "„Wie viele Mitarbeitende hat die Firma?“"
+        },
+        {
+          "value": 3,
+          "key": "gut",
+          "label_de": "Gut",
+          "description": {
+            "de": "Frage zeigt echtes Interesse",
+            "en": "Question shows genuine interest"
+          },
+          "example_de": "„Wie sieht ein typischer Arbeitstag als Lernende/r aus?“"
+        },
+        {
+          "value": 4,
+          "key": "sehr_gut",
+          "label_de": "Sehr gut",
+          "description": {
+            "de": "Frage zeigt Vorbereitung und Weitblick",
+            "en": "Question shows preparation and foresight"
+          },
+          "example_de": "„Welche Weiterbildungsmöglichkeiten gibt es nach der Lehre in diesem Betrieb?“"
+        }
+      ]
+    }
+  ]
+}

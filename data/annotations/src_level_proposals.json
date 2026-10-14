@@ -1,0 +1,37 @@
+[
+  {
+    "answer_id": "A-SRC-KR-15",
+    "current_level": 3,
+    "proposed_level": 2,
+    "proposed_class": "incomplete",
+    "reason": "FHGR-Spalte «stark», nach Bewertungsraster aber floskelhaft («neue Kompetenzen erwerben», «fachlich sowie persönlich weiterbilden»), ohne konkretes Lernziel oder Beispiel; beantwortet zudem «nach der Lehre» statt der gefragten Entwicklung «während der Lehre». Motivation/Zielorientierung eher Stufe 2."
+  },
+  {
+    "answer_id": "A-SRC-KR-35",
+    "current_level": 4,
+    "proposed_level": 3,
+    "proposed_class": "strong",
+    "reason": "Konkretes Projekt und eigene Rolle (Planungskomitee, Koordination) = Konkrete Beispiele Stufe 3 (Kontext + eigener Beitrag); es fehlen Ergebnis und Begründung, warum die Person stolz ist, sowie der Bezug zur Lehrstelle."
+  },
+  {
+    "answer_id": "A-SRC-KT-07",
+    "current_level": 4,
+    "proposed_level": 3,
+    "proposed_class": "strong",
+    "reason": "Zwei passende Stärken (Genauigkeit, Geduld) mit allgemeiner Verhaltensbeschreibung, aber ohne konkretes Erlebnis (Konkrete Beispiele Stufe 2). Laut Brief verlangt Stufe 4 ein konkretes persönliches Beispiel."
+  },
+  {
+    "answer_id": "A-SRC-KT-19",
+    "current_level": 4,
+    "proposed_level": 3,
+    "proposed_class": "strong",
+    "reason": "Stärken (strukturiert, neugierig) mit Verhaltensbeschreibung und Nutzen, aber ohne konkrete Situation (Konkrete Beispiele Stufe 2). Grenzfall; Stufe 4 nur vertretbar wegen hoher Berufsrelevanz."
+  },
+  {
+    "answer_id": "A-SRC-KT-21",
+    "current_level": 4,
+    "proposed_level": 3,
+    "proposed_class": "strong",
+    "reason": "«Zu perfektionistisch» ist eine klassische verkappte Stärke, die das FHGR-Kriterienraster selbst als Merkmal schwacher Antworten nennt (Schwächen: «nennt eine verkappte Stärke»). Massnahme (Zeitlimiten) vorhanden, Wirkung aber nur behauptet, kein Erlebnis – Selbstreflexion Stufe 3."
+  }
+]

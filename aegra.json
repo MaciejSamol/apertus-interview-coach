@@ -1,0 +1,7 @@
+{
+  "name": "HackApertusTemplate26",
+  "dependencies": ["./src"],
+  "graphs": {
+    "agent": "./src/main.py:graph"
+  }
+}

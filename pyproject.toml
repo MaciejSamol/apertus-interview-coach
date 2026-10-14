@@ -1,0 +1,26 @@
+[project]
+name = "apertus-interview-coach"
+version = "0.1.0"
+description = "Apertus 1.5 8B interview coach for Swiss apprenticeship interviews (FHGR HackApertus 2026)"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "aegra-cli>=0.10.7",
+    "grandalf>=0.8",
+    "langchain>=0.3.27",
+    "langchain-openai>=1.7.0",
+    "langgraph>=1.0.3",
+    "pydantic>=2.12.5",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "N", "UP", "B", "SIM"]
+# Long prompt and regex string literals are kept on one line for readability.
+ignore = ["E501"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["coach"]

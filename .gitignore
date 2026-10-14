@@ -1,0 +1,15 @@
+# Files
+.DS_Store
+.env
+
+# Folders
+.venv/
+__pycache__/
+
+# local test runs
+runs/
+.ruff_cache/
+
+# web UI build output
+ui/node_modules/
+ui/.next/

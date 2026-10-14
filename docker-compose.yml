@@ -1,0 +1,125 @@
+# Docker Compose - PostgreSQL + Redis + API
+# aegra dev  -> docker compose up postgres -d  (database only, in-memory broker)
+# aegra up   -> docker compose up --build      (full stack, Redis broker)
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg18
+    container_name: hackapertustemplate26-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-hackapertustemplate26}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-hackapertustemplate26_secret}
+      POSTGRES_DB: ${POSTGRES_DB:-hackapertustemplate26}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-hackapertustemplate26}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: hackapertustemplate26-redis
+    restart: unless-stopped
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  hackapertustemplate26:
+    build: .
+    container_name: hackapertustemplate26-api
+    restart: unless-stopped
+    ports:
+      - "${PORT:-2026}:${PORT:-2026}"
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER:-hackapertustemplate26}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-hackapertustemplate26_secret}
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=${POSTGRES_DB:-hackapertustemplate26}
+      - AEGRA_CONFIG=aegra.json
+      - AUTH_TYPE=${AUTH_TYPE:-noop}
+      - PORT=${PORT:-2026}
+      - REDIS_BROKER_ENABLED=true
+      - REDIS_URL=redis://redis:6379/0
+      - LLM_BASE_URL=${LLM_BASE_URL_DOCKER:-http://vllm:8000/v1}
+      - COACH_DATA_DIR=/app/data
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:${PORT:-2026}/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    volumes:
+      - ./src:/app/src:ro
+      - ./aegra.json:/app/aegra.json:ro
+
+  # Web chat UI (Agent Chat UI by LangChain, MIT) -> http://localhost:3000
+  ui:
+    build:
+      context: ./ui
+      args:
+        NEXT_PUBLIC_API_URL: ${UI_API_URL:-http://localhost:2026}
+        NEXT_PUBLIC_ASSISTANT_ID: agent
+    container_name: hackapertustemplate26-ui
+    restart: unless-stopped
+    ports:
+      - "${UI_PORT:-3000}:3000"
+    depends_on:
+      hackapertustemplate26:
+        condition: service_started
+
+  # Apertus 1.5 8B via the Swiss AI vLLM fork (full bf16, fits < 32 GB VRAM).
+  # Start everything: docker compose --profile gpu up -d   (needs HF_TOKEN in .env, model terms accepted on Hugging Face)
+  # 16 GB GPU (e.g. RTX 4080): VLLM_MODEL=onprem-ai/Apertus-v1.5-8B-FP8 and VLLM_EXTRA_ARGS=--enforce-eager
+  # External vLLM instead: skip the profile and set LLM_BASE_URL_DOCKER (+ LLM_API_KEY) in .env
+  vllm:
+    image: ${VLLM_IMAGE:-ghcr.io/swiss-ai/vllm_apertus_1.5_release:latest-amd64}
+    profiles: ["gpu"]
+    container_name: hackapertustemplate26-vllm
+    ipc: host          # vLLM needs more shared memory than Docker's 64 MB default
+    entrypoint: ["vllm", "serve"]
+    command: >
+      ${VLLM_MODEL:-swiss-ai/Apertus-v1.5-8B}
+      --served-model-name swiss-ai/Apertus-v1.5-8B
+      --chat-template-content-format string
+      --max-model-len ${VLLM_MAX_LEN:-16384} --gpu-memory-utilization ${VLLM_GPU_UTIL:-0.85}
+      --limit-mm-per-prompt '{"image":0,"audio":0}'
+      ${VLLM_EXTRA_ARGS:-}
+    environment:
+      - HF_TOKEN=${HF_TOKEN:-}
+      # V2 model runner relies on pinned/UVA memory, which is limited under WSL2 (Docker Desktop on Windows)
+      - VLLM_USE_V2_MODEL_RUNNER=${VLLM_USE_V2_MODEL_RUNNER:-0}
+    ports:
+      - "8000:8000"
+    volumes:
+      - hf_cache:/root/.cache/huggingface
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+volumes:
+  hf_cache:
+  postgres_data:
+  redis_data:

@@ -1,0 +1,199 @@
+{
+  "name": "Leitlinien für altersgerechtes und konstruktives Feedback an Jugendliche",
+  "source": "Feedbackkriterien zum Vorstellungsgespräch.docx (FHGR / Profolio); K3 and L4 are taken from the feedback prompt in the same document; S4 is an addition for the multilingual setting",
+  "groups": [
+    {
+      "key": "T",
+      "title_de": "Tonalität",
+      "title_en": "Tone",
+      "rules": [
+        {
+          "id": "T1",
+          "de": "Wertschätzend und ermutigend, nie herablassend oder ironisch.",
+          "en": "Appreciative and encouraging, never condescending or ironic."
+        },
+        {
+          "id": "T2",
+          "de": "Auf Augenhöhe sprechen – nicht wie ein Lehrer, der eine Note verteilt, sondern wie ein unterstützender Coach.",
+          "en": "Speak at eye level – like a supportive coach, not a teacher handing out grades."
+        },
+        {
+          "id": "T3",
+          "de": "Keine Übertreibung ins Positive («perfekt», «genial») und keine Dramatisierung ins Negative («das war schlecht», «das geht gar nicht»).",
+          "en": "No exaggerated praise ('perfect', 'brilliant') and no dramatising ('that was bad')."
+        }
+      ]
+    },
+    {
+      "key": "S",
+      "title_de": "Sprache",
+      "title_en": "Language",
+      "rules": [
+        {
+          "id": "S1",
+          "de": "Klare, einfache Sätze; keine Fachbegriffe aus Personalwesen oder Psychologie ohne Erklärung (z. B. «geringe Selbstwirksamkeit»).",
+          "en": "Clear, simple sentences; no unexplained HR/psychology jargon."
+        },
+        {
+          "id": "S2",
+          "de": "Aktive Sprache statt Passiv («Du hast gut erklärt, wie …» statt «Es wurde gut erklärt, dass …»).",
+          "en": "Active rather than passive voice."
+        },
+        {
+          "id": "S3",
+          "de": "Kurze Sätze.",
+          "en": "Short sentences."
+        },
+        {
+          "id": "S4",
+          "de": "[Ergänzung, nicht im FHGR-Original] Feedback in der Sprache des Gesprächs geben (de/fr/it; bei Mundart: Standarddeutsch).",
+          "en": "[Addition, not in the FHGR original] Give feedback in the language of the interview (de/fr/it; for dialect: Standard German)."
+        }
+      ]
+    },
+    {
+      "key": "R",
+      "title_de": "Struktur des Feedbacks",
+      "title_en": "Structure",
+      "rules": [
+        {
+          "id": "R1",
+          "de": "Stärken zuerst nennen, dann Verbesserungspotenzial.",
+          "en": "Strengths first, then room for improvement."
+        },
+        {
+          "id": "R2",
+          "de": "Pro Kriterium maximal 1–2 zentrale Punkte, nicht alles gleichzeitig aufzählen.",
+          "en": "At most 1–2 key points per criterion; do not list everything at once."
+        },
+        {
+          "id": "R3",
+          "de": "Immer mit einem konkreten, machbaren nächsten Schritt abschliessen («Was du beim nächsten Mal ausprobieren kannst …»).",
+          "en": "Always end with a concrete, feasible next step."
+        }
+      ]
+    },
+    {
+      "key": "B",
+      "title_de": "Verhalten statt Person bewerten",
+      "title_en": "Behaviour, not person",
+      "rules": [
+        {
+          "id": "B1",
+          "de": "Feedback bezieht sich immer auf das gezeigte Verhalten oder die Antwort, nie auf die Person als Ganzes.",
+          "en": "Feedback always refers to the observed behaviour/answer, never to the person as a whole."
+        },
+        {
+          "id": "B2",
+          "de": "Nicht: «Du bist unsicher.» Sondern: «Deine Stimme wurde bei dieser Frage leiser – das kann auf Unsicherheit hindeuten.»",
+          "en": "Not 'You are insecure' but 'Your voice got quieter on this question – this may indicate uncertainty.'"
+        },
+        {
+          "id": "B3",
+          "de": "Keine Diagnosen oder Charakterzuschreibungen («introvertiert», «wenig motiviert», «schüchtern»).",
+          "en": "No diagnoses or character labels ('introverted', 'unmotivated', 'shy')."
+        }
+      ]
+    },
+    {
+      "key": "E",
+      "title_de": "Entwicklungsorientiert statt bewertend",
+      "title_en": "Development-oriented",
+      "rules": [
+        {
+          "id": "E1",
+          "de": "Wachstumsdenken fördern: Fehler als Lernchance rahmen, nicht als Makel.",
+          "en": "Foster a growth mindset: frame mistakes as learning opportunities."
+        },
+        {
+          "id": "E2",
+          "de": "Formulierungen wie «noch nicht» statt «nicht» verwenden.",
+          "en": "Use 'not yet' rather than 'not'."
+        },
+        {
+          "id": "E3",
+          "de": "Realistische, alterstypische Erwartungen ansetzen – ein 15-Jähriger im ersten Bewerbungsgespräch muss nicht wie ein erfahrener Berufsmann klingen.",
+          "en": "Age-appropriate expectations – a 15-year-old need not sound like an experienced professional."
+        }
+      ]
+    },
+    {
+      "key": "M",
+      "title_de": "Emotionale Sicherheit",
+      "title_en": "Emotional safety",
+      "rules": [
+        {
+          "id": "M1",
+          "de": "Nervosität, Versprecher oder Pausen nicht negativ bewerten.",
+          "en": "Do not penalise nervousness, slips of the tongue or pauses."
+        },
+        {
+          "id": "M2",
+          "de": "Bei besonders schwachen Antworten trotzdem einen ermutigenden Rahmen setzen, ohne die Schwäche zu beschönigen oder zu verschweigen.",
+          "en": "For very weak answers keep an encouraging frame without glossing over or hiding the weakness."
+        }
+      ]
+    },
+    {
+      "key": "K",
+      "title_de": "Konkretheit",
+      "title_en": "Concreteness",
+      "rules": [
+        {
+          "id": "K1",
+          "de": "Jede Rückmeldung mit einem Zitat oder Verweis auf eine konkrete Stelle im Gespräch belegen.",
+          "en": "Back every point with a quote or reference to a concrete moment in the conversation."
+        },
+        {
+          "id": "K2",
+          "de": "Verbesserungstipps müssen konkret umsetzbar sein, keine vagen Ratschläge («mehr Selbstbewusstsein zeigen» ist zu abstrakt).",
+          "en": "Tips must be concretely actionable, not vague ('show more confidence' is too abstract)."
+        },
+        {
+          "id": "K3",
+          "de": "Bewerte nie ohne Beleg aus dem Gespräch; fehlt eine Aussage, dies offen sagen statt raten. Nichts erfinden.",
+          "en": "Never rate without evidence; if there is none, say so instead of guessing. Do not invent content."
+        }
+      ]
+    },
+    {
+      "key": "L",
+      "title_de": "Grenzen setzen",
+      "title_en": "Boundaries",
+      "rules": [
+        {
+          "id": "L1",
+          "de": "Keine Bewertung von Aussehen, Stimme (ausser im Kontext von Nervosität), familiärem Hintergrund oder Persönlichkeitsmerkmalen.",
+          "en": "No judgement of appearance, voice (except re nervousness), family background or personality traits."
+        },
+        {
+          "id": "L2",
+          "de": "Keine Angst erzeugen («So wirst du nie eine Lehrstelle finden») – auch nicht implizit.",
+          "en": "Never create fear ('You'll never find an apprenticeship like this'), not even implicitly."
+        },
+        {
+          "id": "L3",
+          "de": "Bei Anzeichen von grosser Verunsicherung oder Selbstzweifeln: unterstützend reagieren und ggf. auf eine reale Bezugsperson (Berufsberater/in, Eltern, Lehrperson) verweisen.",
+          "en": "On signs of strong insecurity or self-doubt: respond supportively and refer to a real person (career counsellor, parents, teacher)."
+        },
+        {
+          "id": "L4",
+          "de": "Keine Vergleiche mit anderen Jugendlichen oder einem «idealen» Kandidaten.",
+          "en": "No comparisons with other young people or an 'ideal' candidate."
+        }
+      ]
+    },
+    {
+      "key": "A",
+      "title_de": "Abschluss jeder Rückmeldung",
+      "title_en": "Closing",
+      "rules": [
+        {
+          "id": "A1",
+          "de": "Immer mit einem stärkenden, motivierenden Satz enden, der den Übungscharakter betont.",
+          "en": "Always end with an encouraging sentence that stresses the practice character."
+        }
+      ]
+    }
+  ]
+}
