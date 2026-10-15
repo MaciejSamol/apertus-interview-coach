@@ -1,6 +1,7 @@
-"""End-to-end test through the HTTP API (exactly what a client / benchmark sees).
+"""End-to-end test through the HTTP API, exactly as a client sees it.
 
-Requires the server to run (docker compose up, or uv run aegra dev). Plays a scripted candidate:
+Requires the server to run (docker compose up, or uv run aegra dev). Plays a scripted candidate until the
+interview ends with the feedback:
 
     uv run python tests/api_smoke.py                       # http://localhost:2026, German
     uv run python tests/api_smoke.py --url http://host:2026 --lang fr
@@ -34,10 +35,35 @@ SCRIPTS = {
         "Mi chiamo Luca, ho 15 anni e cucino volentieri.",
     ],
 }
-FILLER = {
-    "de": "In der Schnupperlehre habe ich zum Beispiel Gemüse gerüstet und beim Anrichten geholfen.",
-    "fr": "Pendant mon stage, j'ai par exemple préparé des brochures et répondu au téléphone.",
-    "it": "Durante lo stage, per esempio, ho preparato le verdure e aiutato a impiattare.",
+# Varied answers for the rest of the interview, used in turn.
+FILLERS = {
+    "de": [
+        "In der Schnupperlehre habe ich Gemüse gerüstet und beim Anrichten geholfen.",
+        "Mir gefällt, dass man mit den Händen arbeitet und die Gäste sich über das Essen freuen.",
+        "Ich bin zuverlässig. Im Fussballverein bin ich immer pünktlich im Training.",
+        "Manchmal bin ich ungeduldig, aber ich versuche, zuerst ruhig nachzufragen.",
+        "Ich würde zuerst meine Berufsbildnerin fragen, wie sie es gemacht haben möchte.",
+        "Wie viele Lernende arbeiten bei Ihnen in der Küche?",
+        "Nein, danke, ich habe keine weiteren Fragen.",
+    ],
+    "fr": [
+        "Pendant mon stage, j'ai préparé des brochures et répondu au téléphone.",
+        "J'aime organiser et aider les clients à trouver une solution.",
+        "Je suis fiable. Au club de volley, je suis toujours à l'heure.",
+        "Parfois je parle trop vite, alors j'essaie de prendre mon temps.",
+        "Je demanderais d'abord à ma formatrice comment elle veut que je fasse.",
+        "Combien d'apprentis travaillent dans votre entreprise ?",
+        "Non merci, je n'ai pas d'autres questions.",
+    ],
+    "it": [
+        "Durante lo stage ho preparato le verdure e aiutato a impiattare.",
+        "Mi piace lavorare con le mani e vedere i clienti contenti.",
+        "Sono affidabile. Alla squadra di calcio arrivo sempre puntuale.",
+        "A volte sono impaziente, ma cerco di chiedere con calma.",
+        "Chiederei prima al mio formatore come vuole che lo faccia.",
+        "Quanti apprendisti lavorano nella vostra cucina?",
+        "No, grazie, non ho altre domande.",
+    ],
 }
 
 
@@ -61,7 +87,8 @@ def main() -> int:
 
     client = get_sync_client(url=args.url)
     thread = client.threads.create()
-    msgs = SCRIPTS[args.lang] + [FILLER[args.lang]] * args.max_turns
+    fillers = FILLERS[args.lang]
+    msgs = SCRIPTS[args.lang] + [fillers[i % len(fillers)] for i in range(args.max_turns)]
     t_all = time.time()
     prev_reply = None
     for i, msg in enumerate(msgs[: args.max_turns]):
