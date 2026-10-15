@@ -9,7 +9,7 @@ It runs fully on-premise on **Apertus 1.5 8B** (< 32 GB VRAM) and needs **~1.2 L
 | Requirement | How it is met |
 |---|---|
 | Adaptive interview | 6 stages (FHGR phases), plan from the FHGR question bank, follow-up questions on weak answers, answers questions as the company, adapts to the occupation, the situation and the candidate's state |
-| Useful feedback | 11 criteria × 4 levels, real quotes as evidence, one concrete tip per criterion, summary with the single next step, all 26 FHGR feedback rules in the prompt, plus checks in code |
+| Useful feedback | 11 criteria × 4 levels, real quotes as evidence, one concrete tip per criterion, summary with the single next step, all FHGR feedback rules in the prompt, plus checks in code |
 | Multilingual | de / fr / it end to end (questions, reactions, feedback); Swiss German dialect understood, never penalised; *du/tu* or *Sie/vous/Lei* configurable |
 | Voice-ready | short spoken sentences, no markdown during the interview, fixed texts for most turns, spoken feedback mode (`COACH_FEEDBACK_MODE=spoken`); «Stopp» / «stop» / «basta» ends the interview at any time with feedback on what was said so far |
 | Model / hardware | Apertus 1.5 8B in bf16 via vLLM (Swiss AI fork), < 32 GB VRAM, on-premise |
@@ -218,8 +218,7 @@ apertus-interview-coach/
 ├── data/                    FHGR datasets used at runtime (questions, rubric, annotations, postings, scenarios, …)
 ├── tests/                   eval_assess.py, simulate.py, api_smoke.py, chat_cli.py, test_flow_mock.py, clear_threads.py
 ├── ui/                      Agent Chat UI (LangChain, MIT) with Dockerfile, preconfigured for this coach
-├── spark/                   compose file to serve Apertus on a DGX Spark (arm64)
-├── docs/                    architecture diagram, original template README
+├── docs/                    architecture diagram
 └── docker-compose.yml, Dockerfile, .env.example, pyproject.toml
 ```
 
