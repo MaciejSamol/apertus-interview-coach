@@ -276,7 +276,7 @@ def _grounded_quote(quote: str | None, answer: str) -> str:
 def assess(state: CoachState) -> dict[str, Any]:
     answer = _text(state.messages[-1])
     if state.paused:  # the reply to a support message is not graded
-        return {"last_assessment": {"coach_action": "continue", "scores": {}}, "paused": False}
+        return {"last_assessment": {"coach_action": "continue", "scores": {}, "after_support": True}, "paused": False}
     if _is_end_request(answer):  # "Stopp" is not an answer: no LLM call, no score
         return {"last_assessment": {"coach_action": "continue", "scores": {}}}
     raw = llm.chat(prompts.assess_messages(state, answer), purpose="assess", json_mode=True, max_tokens=350)
@@ -287,7 +287,8 @@ def assess(state: CoachState) -> dict[str, Any]:
 MAX_FOLLOWUPS_TOTAL = 4
 DISCOURAGED = re.compile(
     r"(absag(e|a|en)|abgesagt|abgelehnt|keine (lehrstelle|zusage)|nöd leicht|macht mir (den kopf|angst|stress)|"
-    r"refus|pas été pris|personne ne (me|veut)|rifiut|non mi hanno pres|nessuno mi)",
+    r"\brefus\b|refusée?s?\b|pas été pris|personne ne (me prend|me veut|veut de moi|m'a pris)|rifiut|non mi hanno pres|"
+    r"nessuno mi (prende|vuole|ha pres))",
     re.I,
 )
 DISTRESS = re.compile(
@@ -402,7 +403,9 @@ def decide(state: CoachState) -> dict[str, Any]:
     # answers, at most MAX_FOLLOWUPS_TOTAL per interview, never twice on the same question and never on two
     # consecutive questions. The threshold (mean score <= 2.5) was tuned with tests/eval_assess.py.
     scores = [v for v in (a.get("scores") or {}).values() if isinstance(v, int)]
-    weak = too_short or (act == "probe" and (not scores or sum(scores) / len(scores) <= 2.5))
+    weak = not a.get("after_support") and (
+        too_short or (act == "probe" and (not scores or sum(scores) / len(scores) <= 2.5))
+    )
     can_probe = (
         not light
         and state.followups < s.max_followups
@@ -495,6 +498,14 @@ TRANSITIONS = {
 }
 
 
+def _before_question(text: str, sentence: str) -> str:
+    """Insert a sentence before the closing question if there is one, otherwise append it."""
+    m = re.search(r"(?s)^(.*[.!])\s+([^.!?]*\?)\s*$", text)
+    if m:
+        return f"{m.group(1)} {sentence} {m.group(2)}"
+    return f"{text} {sentence}"
+
+
 def interviewer(state: CoachState) -> dict[str, Any]:
     action = state.action or "next"
     if action == "next" and state.encouraged and not state.announced_encouragement:
@@ -542,7 +553,9 @@ def interviewer(state: CoachState) -> dict[str, Any]:
         out,
         re.I,
     ):
-        out = f"{out} {STRINGS['referral'][base_lang(state.lang)]}"
+        out = _before_question(out, STRINGS["referral"][base_lang(state.lang)])
+    if action == "support" and "147" not in out:
+        out = _before_question(out, STRINGS["helpline"][base_lang(state.lang)])
     if action == "start":
         if any(isinstance(m, AIMessage) for m in state.messages):
             # The intake message already greeted the candidate: drop a second greeting.

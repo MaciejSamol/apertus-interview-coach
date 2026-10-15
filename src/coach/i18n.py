@@ -38,14 +38,19 @@ STRINGS = {
         ],
     },
     "referral": {
-        "de": "Wenn dich die Bewerbungen gerade belasten, sprich mit einer Person, der du vertraust: deiner Klassenlehrperson, deinen Eltern oder der Berufsberatung im BIZ. Du musst das nicht allein schaffen.",
-        "fr": "Si les candidatures te pèsent en ce moment, parles-en à une personne de confiance : ton enseignant·e, tes parents ou l'orientation professionnelle. Tu n'as pas à gérer ça seul·e.",
-        "it": "Se le candidature ti pesano in questo periodo, parlane con una persona di fiducia: il tuo docente, i tuoi genitori o l'orientamento professionale. Non devi affrontarlo da solo o da sola.",
+        "de": "Wenn dich die Bewerbungen gerade belasten, sprich mit einer Person, der du vertraust: deiner Klassenlehrperson, deinen Eltern oder der Berufsberatung im BIZ. Du kannst auch jederzeit gratis und vertraulich die 147 von Pro Juventute anrufen oder ihnen schreiben. Du musst das nicht allein schaffen.",
+        "fr": "Si les candidatures te pèsent en ce moment, parles-en à une personne de confiance : ton enseignant·e, tes parents ou l'orientation professionnelle. Tu peux aussi appeler ou écrire à tout moment, gratuitement et en toute confidentialité, au 147 de Pro Juventute. Tu n'as pas à gérer ça seul·e.",
+        "it": "Se le candidature ti pesano in questo periodo, parlane con una persona di fiducia: il tuo docente, i tuoi genitori o l'orientamento professionale. Puoi anche chiamare o scrivere in qualsiasi momento, gratis e in modo confidenziale, al 147 di Pro Juventute. Non devi affrontarlo da solo o da sola.",
     },
     "encourage": {
         "de": "Danke, dass du das so offen sagst. Absagen sind belastend, und sehr viele Jugendliche erleben das. Hier üben wir in Ruhe, ohne Druck. Wenn dich das beschäftigt, kannst du auch mit deiner Klassenlehrperson oder der Berufsberatung im BIZ darüber reden.",
         "fr": "Merci de le dire aussi ouvertement. Les refus sont difficiles, et beaucoup de jeunes vivent la même chose. Ici, on s'entraîne tranquillement, sans pression. Si ça te préoccupe, tu peux aussi en parler à ton enseignant·e ou à l'orientation professionnelle.",
         "it": "Grazie di dirlo così apertamente. I rifiuti pesano, e moltissimi giovani li vivono. Qui ci esercitiamo con calma, senza pressione. Se ti preoccupa, puoi parlarne anche con il tuo docente o con l'orientamento professionale.",
+    },
+    "helpline": {
+        "de": "Du kannst auch jederzeit gratis und vertraulich die 147 von Pro Juventute anrufen oder ihnen schreiben.",
+        "fr": "Tu peux aussi appeler ou écrire à tout moment, gratuitement et en toute confidentialité, au 147 de Pro Juventute.",
+        "it": "Puoi anche chiamare o scrivere in qualsiasi momento, gratis e in modo confidenziale, al 147 di Pro Juventute.",
     },
     "phone_pickup": {
         "de": "{company}, {name}, grüezi. Was kann ich für dich tun?",

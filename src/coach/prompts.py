@@ -150,7 +150,8 @@ def interviewer_task(action: str, state, next_question: str | None, follow_up: s
         "support": (
             "The candidate shows signs of distress or strong self-doubt. Pause the interview. In 2-3 warm sentences: "
             "acknowledge the feeling, say this is only practice and it is okay, and mention that a trusted person "
-            "(class teacher, parents, career counsellor at the BIZ) can help. Then gently ask if they want to continue."
+            "(class teacher, parents, career counsellor at the BIZ) can help. Then gently ask if they want to continue. "
+            "Do not give phone numbers yourself; the helpline number is added automatically."
         ),
         "answer_company": (
             "The candidate asked you a question. Answer it as the company in 1-3 natural sentences, using ONLY the company facts. "

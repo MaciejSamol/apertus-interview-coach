@@ -115,7 +115,7 @@
   <rect x="40" y="646" width="870" height="86" rx="12" fill="#f1f5f9" stroke="#94a3b8"/>
   <text x="60" y="672" font-size="13" font-weight="700" fill="#0f172a">FHGR / Profolio data (in the image)</text>
   <text x="60" y="694" font-size="12" fill="#334155">242 questions (de/fr/it + dialect) · 11×4 rubric + FHGR feedback rules · 706 expert-annotated answers (few-shot)</text>
-  <text x="60" y="714" font-size="12" fill="#334155">30 postings (company facts) · 1,860 occupations from berufsberatung.ch · 28 scenarios (tests)</text>
+  <text x="60" y="714" font-size="12" fill="#334155">30 postings (company facts) · 1,860 occupations (259 apprenticeships) from berufsberatung.ch · 28 scenarios (tests)</text>
   <path d="M465 646 L465 620" stroke="#475569" stroke-width="1.4" fill="none" marker-end="url(#a)"/>
 
   <rect x="960" y="646" width="200" height="86" rx="12" fill="#f1f5f9" stroke="#94a3b8"/>
